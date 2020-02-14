@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--<pages:PopupPage  xmlns="http://xamarin.com/schemas/2014/forms"
+                               xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App2.Views.APIListView">
+    <pages:PopupPage.Content>
+       
+        <ListView  x:Name="listView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout BackgroundColor="#eee"
+                    Orientation="Vertical">
+                            <Label Text="name"/>
+                            <Label Text="email"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </pages:PopupPage.Content>
+
+</pages:PopupPage>-->
+
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+xmlns:telerikDataControls="clr-namespace:Telerik.XamarinForms.DataControls;assembly=Telerik.XamarinForms.DataControls"
+xmlns:telerikInput="clr-namespace:Telerik.XamarinForms.Input;assembly=Telerik.XamarinForms.Input"
+                 xmlns:telerikListView="clr-namespace:Telerik.XamarinForms.DataControls.ListView;assembly=Telerik.XamarinForms.DataControls"
+
+
+             x:Class="App3.Views.APIListView">
+    <pages:PopupPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="EntryStyle" TargetType="Entry">
+                <Setter Property="PlaceholderColor" Value="#9cdaf1"/>
+                <Setter Property="TextColor" Value="#7dbbe6"/>
+            </Style>
+        </ResourceDictionary>
+    </pages:PopupPage.Resources>
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation
+      PositionIn="Bottom"
+      PositionOut="Center"
+      ScaleIn="1"
+      ScaleOut="0.7"
+      DurationIn="200"
+      EasingIn="BounceOut"/>
+    </pages:PopupPage.Animation>
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+
+
+
+        </Grid.ColumnDefinitions>
+        <!--<ScrollView
+    HorizontalOptions="Center"
+    VerticalOptions="Center">-->
+        <AbsoluteLayout>
+            <Frame
+        x:Name="FrameContainer"
+   
+        HorizontalOptions="Center"
+        BackgroundColor="White">
+                <!--<StackLayout
+            IsClippedToBounds="True"
+            Padding="10, 5"
+            Spacing="3">-->
+                <StackLayout
+            IsClippedToBounds="True"
+          
+           >
+
+                    <!--<Image
+              HorizontalOptions="Center"
+              x:Name="OctocatImage"
+              Margin="10"
+              HeightRequest="150"
+              WidthRequest="150">
+                        <Image.Source>
+                            <OnPlatform
+                  x:TypeArguments="ImageSource"
+                  Android="github_octocat.png"
+                  iOS="github_octocat.png"
+                       ></OnPlatform> </Image.Source>
+                    </Image>-->
+                    <!--<Entry
+              HorizontalOptions="Center"
+              x:Name="UsernameEntry"
+              Style="{StaticResource EntryStyle}"
+              Placeholder="Username" />
+                    <Entry
+              HorizontalOptions="Center"
+              x:Name="PasswordEntry"
+              Style="{StaticResource EntryStyle}"
+              Placeholder="Password"
+              IsPassword="True"/>
+                    <Button
+            Margin="10, 5"
+            BackgroundColor="#7dbbe6"
+            HorizontalOptions="Fill"
+            Clicked="OnLogin"
+            x:Name="LoginButton"
+            Text="Login">
+                        <Button.HeightRequest>
+                            <OnPlatform x:TypeArguments="x:Double" Android="50" iOS="30"/>
+                        </Button.HeightRequest>
+                    </Button>-->
+                    <!--<Label x:Name="FoodName" Text="{Binding FoodName}" FontSize="Medium" FontAttributes="Bold"/>
+                    -->
+                    <!--<Label x:Name="TimeOfDay" Text="{Binding TimeOfDay}"/>-->
+                    <!--
+                    <Label x:Name="FoodCal" Text="{Binding FoodCal}" VerticalTextAlignment="Center"/>
+                    <Label x:Name="FoodCarb" Text="{Binding FoodCarb}"/>
+                    <Label x:Name="FoodFat" Text="{Binding FoodFat}"/>
+                    <Label x:Name="FoodProt" Text="{Binding FoodProt}"/>
+
+                    <Label x:Name="TimesPressed" Text="{Binding TimesPressed}"/>
+                    <Label x:Name="ClassId" Text="{Binding ClassId}"/>
+                    <StackLayout >
+                        <Label />
+                        <BoxView IsVisible="{Binding HasMoreInfo}"
+            HeightRequest="1" 
+            BackgroundColor="Black" 
+            HorizontalOptions="FillAndExpand" />
+                        <Label />
+                    </StackLayout>
+
+                    <Label x:Name="MoreInfo" Text="{Binding MoreInfo}"/>
+                    <Label x:Name="IsCustom" Text="{Binding IsCustom}" FontSize="Small" FontAttributes="Italic"/>-->
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition ></ColumnDefinition>
+                            <ColumnDefinition ></ColumnDefinition>
+                            <ColumnDefinition ></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <telerikInput:RadButton HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="0" Clicked="Button_ClickedPrev" x:Name="Prev" Text="Previous"/>
+                        <Label VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="1" Text="{Binding thisPage}"/>
+                        <telerikInput:RadButton  VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="2" Clicked="Button_ClickedNext" x:Name="Next" Text="Next"/>
+                    </Grid>
+                    <telerikDataControls:RadListView Grid.Row="0" Grid.Column="0" x:Name="listViewFood">
+                        <telerikDataControls:RadListView.ItemTemplate>
+                            <DataTemplate>
+                                <telerikListView:ListViewTemplateCell >
+                                    <telerikListView:ListViewTemplateCell.View TextColor="Black" DetailColor="Gray">
+                                        <Grid >
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="Auto" />
+
+
+                                            </Grid.RowDefinitions>
+                                            <!--<StackLayout VerticalOptions="Fill"  HorizontalOptions="Start" BackgroundColor="#eee"
+                    Orientation="Horizontal">-->
+                                        <!--<Label Text="{Binding fdcId}"/>-->
+                                        <StackLayout ClassId="{Binding fdcId}">
+                                        <Label Grid.Row="0" Text="{Binding description}" ClassId="{Binding fdcId}">
+                                        <!--<Label Text="hi" ClassId="hi2">-->
+
+                                            <!--<Label.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="SelectedItem"/>
+                                            </Label.GestureRecognizers>-->
+                                        </Label>
+                                            <Label Grid.Row="1" FontSize="9" Text="{Binding additionalDescriptions}" />
+
+                                            <!--</StackLayout>-->
+                                                <StackLayout.GestureRecognizers>
+                                                    <TapGestureRecognizer Tapped="SelectedItem"/>
+                                                </StackLayout.GestureRecognizers>
+                                        </StackLayout>
+                                        </Grid>
+                                    </telerikListView:ListViewTemplateCell.View>
+
+                                </telerikListView:ListViewTemplateCell>
+                          
+                            </DataTemplate>
+                        </telerikDataControls:RadListView.ItemTemplate>
+                        <telerikDataControls:RadListView.LayoutDefinition>
+                            <telerikListView:ListViewLinearLayout ItemLength="50" />
+                        </telerikDataControls:RadListView.LayoutDefinition>
+                    </telerikDataControls:RadListView>
+
+                </StackLayout>
+
+            </Frame>
+            <ContentView
+          AbsoluteLayout.LayoutFlags="PositionProportional"
+          AbsoluteLayout.LayoutBounds="1, 0, -1, -1">
+                <ContentView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnCloseButtonTapped"/>
+                </ContentView.GestureRecognizers>
+                <Image
+          x:Name="CloseImage"
+          HeightRequest="30"
+          WidthRequest="30">
+                    <Image.Source>
+                        <OnPlatform
+              x:TypeArguments="ImageSource"
+              Android="close_circle_button.png"
+              iOS="close_circle_button.png"
+             />
+                    </Image.Source>
+                </Image>
+            </ContentView>
+        </AbsoluteLayout>
+        <!--</ScrollView>-->
+    </Grid>
+</pages:PopupPage>

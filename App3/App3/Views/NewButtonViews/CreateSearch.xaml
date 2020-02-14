@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                                       xmlns:telerikInput="clr-namespace:Telerik.XamarinForms.Input;assembly=Telerik.XamarinForms.Input"
+       xmlns:customPicker="clr-namespace:App3.CustomRenderers"
+             x:Class="App3.Views.CreateSearch">
+    <ContentPage.Content>
+        <Frame x:Name="MealFrame" x:FieldModifier="public"
+                           
+           Padding="20" BackgroundColor="Transparent"
+                  HasShadow="False" HorizontalOptions="FillAndExpand" CornerRadius="5" OutlineColor="Transparent">
+            <Grid Grid.Row="0">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+
+
+                </Grid.ColumnDefinitions>
+                <StackLayout  Grid.Row="0" Grid.Column="1">
+
+
+                    <Label FontAttributes="Bold" Text="Search Database.."
+                    FontSize="Medium"
+              
+               
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Start"
+                />
+
+                </StackLayout>
+                <StackLayout Grid.Row="1" Grid.Column="0">
+
+
+                    <Label Text="Name"
+                     FontSize="Medium"
+              FontAttributes="Bold"
+               
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Start"
+                />
+
+                </StackLayout>
+                <StackLayout Grid.Row="1" Grid.Column="1">
+
+
+                    <Entry Placeholder="search..." MaxLength="40" WidthRequest ="250" Text="" x:Name="Name"
+                    
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center"
+                        Unfocused="SearchboxUnFocused"
+                     
+                />
+
+                </StackLayout>
+                <!--Unfocused="SearchboxUnFocused"-->
+
+                <!--Focused="SearchboxFocused"-->
+                <!--Completed="Name_TextChanged"-->
+
+
+                <StackLayout  Grid.Row="2" Grid.Column="0">
+
+
+                    <Label  Text="Food Portion"
+                    FontSize="Medium"
+              FontAttributes="Bold"
+               x:Name="FoodPortionLabel"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Start"
+                />
+
+                </StackLayout>
+                <StackLayout  Grid.Row="2" Grid.Column="1">
+
+
+                    <customPicker:PLPicker Placeholder="Set portion"   SelectedIndexChanged="FoodPortions_SelectedIndexChanged" FontFamily="Quicksand-Regular.otf#Quicksand" x:Name="FoodPortions"  HorizontalOptions="FillAndExpand">
+
+                    </customPicker:PLPicker>
+
+                </StackLayout>
+                <StackLayout  Grid.Row="3" Grid.Column="1">
+
+
+                    <Entry MaxLength="30" WidthRequest ="250" Keyboard ="Numeric"  Text="" x:Name="ManualPortion"
+                    Unfocused="ManualPortionChanged"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center"
+                />
+
+                </StackLayout>
+                <StackLayout  Grid.Row="5" Grid.Column="0">
+
+
+                    <Label FontAttributes="Bold" Text="Carbs "
+                    FontSize="Medium"
+              x:Name="CarbsLabel"
+               
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Start"
+                />
+
+                </StackLayout>
+                <StackLayout Grid.Row="5" Grid.Column="1">
+
+
+                    <Entry MaxLength="6" WidthRequest ="250" Keyboard ="Numeric"  Text="" x:Name="CarbsPg"
+                    
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center"
+                />
+
+                </StackLayout>
+                <StackLayout  Grid.Row="6" Grid.Column="0">
+
+
+                    <Label FontAttributes="Bold" Text="Protein "
+                    FontSize="Medium"
+              
+               x:Name="ProteinLabel"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Start"
+                />
+
+                </StackLayout>
+                <StackLayout  Grid.Row="6" Grid.Column="1">
+
+
+                    <Entry  MaxLength="6" WidthRequest ="250" Keyboard="Numeric" Text="" x:Name="ProteinPg"
+                    
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center"
+                />
+
+                </StackLayout>
+                <StackLayout  Grid.Row="7" Grid.Column="0">
+
+
+                    <Label FontAttributes="Bold" Text="Fat "
+                    FontSize="Medium"
+              
+               x:Name="FatLabel"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Start"
+                />
+
+                </StackLayout>
+                <StackLayout  Grid.Row="7" Grid.Column="1">
+
+
+                    <Entry MaxLength="6" WidthRequest ="250" Keyboard="Numeric" Text="" x:Name="FatPg"
+                    
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center"
+                />
+
+                </StackLayout>
+
+                <StackLayout Grid.Row="4" Grid.Column="0">
+
+
+                    <Label FontAttributes="Bold" Text="Calories"
+                    FontSize="Medium"
+              
+               x:Name="CaloriesLabel"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Start"
+                />
+
+                </StackLayout>
+                <StackLayout Grid.Row="4" Grid.Column="1">
+
+
+                    <Entry MaxLength="7" WidthRequest ="250"  Keyboard="Numeric" Text="" x:Name="Calories2"
+                    
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center"
+                />
+
+                </StackLayout>
+                <StackLayout Grid.Row="8" Grid.Column="0">
+
+
+                    <Label FontAttributes="Bold" Text="More Info"
+                    FontSize="Medium"
+              
+               x:Name="MoreInfoLabel"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Start"
+                />
+
+                </StackLayout>
+                <StackLayout Grid.Row="8" Grid.Column="1">
+
+
+                    <Entry MaxLength="200" WidthRequest ="250" HeightRequest="50"  Text="" x:Name="MoreInfo"
+                    
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center"
+                />
+
+                </StackLayout>
+
+                <StackLayout Grid.Row="9" Grid.Column="0">
+                    <telerikInput:RadButton x:Name="Clearbtn" Text="Clear"
+                     VerticalOptions="Center"
+                HorizontalOptions="Start"
+               Clicked="Button_ClickedClearSearch"
+
+                    />
+
+                </StackLayout>
+
+                <StackLayout Grid.Row="9" Grid.Column="1">
+                    <telerikInput:RadButton  Text="Create Button"
+                                        
+x:Name="CreateBtn"
+                    VerticalOptions="Center"
+                HorizontalOptions="End"
+                Clicked="Button_ClickedCreate"
+
+                    />
+
+                </StackLayout>
+            </Grid>
+
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>

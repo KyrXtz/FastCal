@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:telerikInput="clr-namespace:Telerik.XamarinForms.Input;assembly=Telerik.XamarinForms.Input"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+             x:Class="App3.App">
+    <Application.Resources>
+      
+                <ResourceDictionary>
+            <Style TargetType="telerikInput:RadButton">
+                <!--<Setter Property="FontFamily" Value="NexaRustSlab-BlackShadow01-Free.otf#Nexa Rust Slab Black Shadow 01" />-->
+              <Setter Property="android:Button.UseDefaultPadding" Value="false" />
+              <Setter Property="android:Button.UseDefaultShadow" Value="true" />
+                <Setter Property="FontFamily" Value="Quicksand-Regular.otf#Quicksand" />
+                <Setter Property="MinimumHeightRequest" Value="50" />
+                <Setter Property="MinimumWidthRequest" Value="50" />
+           
+                <Setter Property="BackgroundColor" Value="DarkTurquoise"/>
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="CornerRadius" Value="60" />
+          
+
+            </Style>
+            <Style TargetType="Label">
+                <!--<Setter Property="FontFamily" Value="Pacifico.ttf#Pacifico" />-->
+                <Setter Property="FontFamily" Value="Quicksand-Regular.otf#Quicksand" />
+
+            </Style>
+            <Style TargetType="Button">
+             
+              <!--<Setter Property="FontFamily" Value="Pacifico.ttf#Pacifico" />-->
+              <Setter Property="android:Button.UseDefaultPadding" Value="false" />
+              <Setter Property="android:Button.UseDefaultShadow" Value="true" />
+              <Setter Property="FontFamily" Value="Quicksand-Regular.otf#Quicksand" />
+
+              <Setter Property="MinimumHeightRequest" Value="50" />
+              <Setter Property="MinimumWidthRequest" Value="50" />
+              <Setter Property="BackgroundColor" Value="DarkTurquoise"/>
+              <Setter Property="TextColor" Value="White" />
+              <Setter Property="CornerRadius" Value="60" />
+        
+
+
+
+            </Style>
+        </ResourceDictionary>
+          
+    </Application.Resources>
+</Application>

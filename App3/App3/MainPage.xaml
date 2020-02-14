@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+xmlns:telerikInput="clr-namespace:Telerik.XamarinForms.Input;assembly=Telerik.XamarinForms.Input"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App3"
+             xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:local1="clr-namespace:App3.CustomRenderers"
+             x:Class="App3.MainPage"
+             x:Name="MainPageRef">
+  <ScrollView>
+    
+  <Grid BackgroundColor="Black" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+    
+      <Grid.RowDefinitions>
+        <RowDefinition Height="12.5*" />
+        <RowDefinition Height="12.5*" />
+        <RowDefinition Height="12.5*" />
+        <RowDefinition Height="12.5*" />
+        <RowDefinition Height="12.5*" />
+        <RowDefinition Height="12.5*" />
+        <RowDefinition Height="12.5*" />
+        <RowDefinition Height="12.5*" />
+
+
+
+      </Grid.RowDefinitions>   
+    <StackLayout Grid.Row="0">
+                <!--<Setter Property="FontFamily" Value="NexaRustSlab-BlackShadow01-Free.otf#Nexa Rust Slab Black Shadow 01" />-->
+
+                <telerikInput:RadButton FontFamily="NexaRustSlab-BlackShadow01-Free.otf#Nexa Rust Slab Black Shadow 01" BackgroundImage="overview.jpg" TextColor="Black" FontSize="Title" FontAttributes="Bold"  BorderColor="White" CornerRadius="20" BackgroundColor="Accent" VerticalOptions="FillAndExpand" x:Name="Overviewbutton" Text="Overview" ClassId="Overview" Clicked="Mainbutton_Clicked"  /> <!--BindingContext="{x:Reference Name=MainPageRef}" IsEnabled="{Binding isenable}"-->
+    </StackLayout>
+    <StackLayout Grid.Row="1">
+                <telerikInput:RadButton FontFamily="NexaRustSlab-BlackShadow01-Free.otf#Nexa Rust Slab Black Shadow 01" BackgroundImage="breakfast.jpg" TextColor="Black"  FontSize="Title" FontAttributes="Bold"  BorderColor="White" CornerRadius="20" BackgroundColor="AliceBlue" VerticalOptions="FillAndExpand" x:Name="Breakfastbutton" Text="Breakfast" ClassId="0" Clicked="Mainbutton_Clicked" />
+                <!--<local1:TextShadowButton BackgroundImage="@drawable/breakfast.jpg" FontSize="Title" FontAttributes="Bold" TextColor="White" BorderColor="White" CornerRadius="20" BackgroundColor="AliceBlue" VerticalOptions="FillAndExpand" x:Name="Breakfastbutton" Text="Breakfast"  />-->
+
+            </StackLayout>
+    <StackLayout Grid.Row="2">
+                <telerikInput:RadButton FontFamily="NexaRustSlab-BlackShadow01-Free.otf#Nexa Rust Slab Black Shadow 01" BackgroundImage="brunch.jpg"  TextColor="Black"  FontSize="Title" FontAttributes="Bold"  BorderColor="White" CornerRadius="20" BackgroundColor="AntiqueWhite" VerticalOptions="FillAndExpand" x:Name="Brunchbutton" Text="Brunch" ClassId="1" Clicked="Mainbutton_Clicked" />
+
+
+            </StackLayout>
+    <StackLayout Grid.Row="3">
+                <telerikInput:RadButton FontFamily="NexaRustSlab-BlackShadow01-Free.otf#Nexa Rust Slab Black Shadow 01" BackgroundImage="lunch.jpg" TextColor="Black"  FontSize="Title" FontAttributes="Bold"  BorderColor="White" CornerRadius="20" BackgroundColor="Aqua" VerticalOptions="FillAndExpand" x:Name="Lunchbutton" Text="Lunch" ClassId="2" Clicked="Mainbutton_Clicked" />
+    </StackLayout>
+    <StackLayout Grid.Row="4">
+                <telerikInput:RadButton FontFamily="NexaRustSlab-BlackShadow01-Free.otf#Nexa Rust Slab Black Shadow 01" BackgroundImage="supper.jpg" TextColor="Black"  FontSize="Title" FontAttributes="Bold"  BorderColor="White" CornerRadius="20" BackgroundColor="Azure" VerticalOptions="FillAndExpand" x:Name="Afternoonbutton" Text="Supper" ClassId="3" Clicked="Mainbutton_Clicked" />
+    </StackLayout>
+    <StackLayout Grid.Row="5">
+                <telerikInput:RadButton FontFamily="NexaRustSlab-BlackShadow01-Free.otf#Nexa Rust Slab Black Shadow 01" BackgroundImage="dinner.jpg" TextColor="Black"  FontSize="Title" FontAttributes="Bold"  BorderColor="White" CornerRadius="20" BackgroundColor="Beige" VerticalOptions="FillAndExpand" x:Name="Eveningbutton" Text="Dinner" ClassId="4" Clicked="Mainbutton_Clicked" />
+    </StackLayout>
+    <StackLayout Grid.Row="6">
+                <telerikInput:RadButton FontFamily="NexaRustSlab-BlackShadow01-Free.otf#Nexa Rust Slab Black Shadow 01" BackgroundImage="extra.jpg" TextColor="Black"  FontSize="Title" FontAttributes="Bold"  BorderColor="White" CornerRadius="20" BackgroundColor="Bisque" VerticalOptions="FillAndExpand" x:Name="Extrabutton" Text="Extra" ClassId="5" Clicked="Mainbutton_Clicked" />
+    </StackLayout>
+    <StackLayout Grid.Row="7">
+                <telerikInput:RadButton FontFamily="NexaRustSlab-BlackShadow01-Free.otf#Nexa Rust Slab Black Shadow 01" BackgroundImage="settings.jpg" TextColor="Black"  FontSize="Title" FontAttributes="Bold"  BorderColor="White" CornerRadius="20" BackgroundColor="BlueViolet" VerticalOptions="FillAndExpand" x:Name="Settingsbutton" ClassId="Settings" Text="Settings" Clicked="Mainbutton_Clicked" />
+    </StackLayout>
+  </Grid>
+   
+  </ScrollView>
+
+</ContentPage>

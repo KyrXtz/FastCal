@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                          xmlns:telerikInput="clr-namespace:Telerik.XamarinForms.Input;assembly=Telerik.XamarinForms.Input"
+BackgroundColor="Beige"
+             x:Class="App3.Views.SettingsView">
+    <ContentPage.Content>
+        <ScrollView>
+            <Frame x:Name="MealFrame" x:FieldModifier="public"
+                           
+           Padding="20"
+                  HasShadow="False" HorizontalOptions="FillAndExpand" CornerRadius="5" OutlineColor="Transparent">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" ></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto" ></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+
+
+
+
+
+
+                    </Grid.RowDefinitions>
+
+                    <StackLayout  Grid.Row="0" >
+
+
+                        <Label x:Name="GoalLabel" Text="Calculate Recommended Caloric Intake"
+                  FontSize="Medium" FontFamily="Quicksand-Bold.otf#Quicksand"
+               
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center"
+                />
+
+                    </StackLayout>
+                    <Grid x:Name="GoalGrid" Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" ></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+
+
+
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition ></ColumnDefinition>
+                            <ColumnDefinition ></ColumnDefinition>
+
+
+
+
+
+
+                        </Grid.ColumnDefinitions>
+
+
+                        <StackLayout Grid.Row="3" Grid.Column="0">
+
+
+                            <Label  Text="Carbs"
+                     FontSize="Medium"
+               FontAttributes="Bold"
+               
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Start"
+                />
+
+                        </StackLayout>
+                        <StackLayout  Grid.Row="3" Grid.Column="1">
+
+
+                            <Entry MaxLength="6" WidthRequest ="300" Keyboard="Numeric" Text="" x:Name="CarbsMg"
+                    
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center"
+                />
+
+                        </StackLayout>
+                        <StackLayout Grid.Row="1" Grid.Column="0">
+
+
+                            <Label FontAttributes="Bold" Text="Protein "
+                         FontSize="Medium"
+              
+               
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Start"
+                />
+
+                        </StackLayout>
+                        <StackLayout  Grid.Row="1" Grid.Column="1">
+
+
+                            <Entry MaxLength="6" WidthRequest ="300" Keyboard="Numeric" Text="" x:Name="ProteinMg"
+                    
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center"
+                />
+
+                        </StackLayout>
+                        <StackLayout Grid.Row="2" Grid.Column="0">
+
+
+                            <Label FontAttributes="Bold" Text="Fat "
+                    FontSize="Medium"
+              
+               
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Start"
+                />
+
+                        </StackLayout>
+                        <StackLayout Grid.Row="2" Grid.Column="1">
+
+
+                            <Entry MaxLength="6" WidthRequest ="300" Keyboard="Numeric" Text="" x:Name="FatMg"
+                    
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center"
+                />
+
+                        </StackLayout>
+                        <StackLayout Grid.Row="0" Grid.Column="0">
+
+
+                            <Label FontAttributes="Bold" Text="Calories"
+                    FontSize="Medium"
+              
+               
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Start"
+                />
+
+                        </StackLayout>
+                        <StackLayout Grid.Row="0" Grid.Column="1">
+
+
+                            <Entry MaxLength="7" WidthRequest ="300"  Keyboard="Numeric" Text="" x:Name="Calories"
+                    Unfocused="Calories_TextChanged"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center"
+                />
+
+                        </StackLayout>
+
+
+
+
+                        <StackLayout Grid.Row="4" Grid.Column="0">
+                            <telerikInput:RadButton x:Name="Clearbtn" Text="Clear"
+                    
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center"
+                 Clicked="Button_ClickedClear"
+                />
+                        </StackLayout>
+                        <StackLayout Grid.Row="4" Grid.Column="1">
+                            <telerikInput:RadButton x:Name="Savebtn" Text="Save"
+                    
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center"
+                 Clicked="Button_ClickedSave"
+                />
+                        </StackLayout>
+                    </Grid>
+                    <StackLayout x:Name="GoalButton"  Grid.Row="1" >
+                        <telerikInput:RadButton  x:Name="Goalbtn" Text="Go" VerticalOptions="Center" HorizontalOptions="Center"
+                 Clicked="RadButton_ClickedCalculate"
+                />
+                    </StackLayout>
+                    <StackLayout x:Name="AdjustLabel" Grid.Row="2" >
+
+
+                        <Label FontAttributes="Bold" Text="Adjust"
+                    FontSize="Medium"
+              
+               
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center"
+                />
+
+                    </StackLayout>
+                    <StackLayout  x:Name="AdjustSlider"  Grid.Row="3" >
+
+
+                        <Slider x:Name="slider" Maximum="5"
+                ValueChanged="Slider_ValueChanged"></Slider>
+
+
+                    </StackLayout>
+                    <Label VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large" HorizontalOptions="Center" Grid.Row="4" x:Name="TitleLabel"></Label>
+                    <Label VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Medium" HorizontalOptions="Center" Grid.Row="5" x:Name="InfoLabel"></Label>
+
+                    <!--<BoxView  Grid.Row="6" 
+            HeightRequest="1" 
+            BackgroundColor="Black" 
+            HorizontalOptions="FillAndExpand" />
+                -->
+                    <!--<Label  Grid.Row="7" HeightRequest="200"></Label>-->
+                    <!--
+                <StackLayout  Grid.Row="8"   VerticalOptions="End" Margin="0,0,0,200">
+                <telerikInput:RadButton   Text="Calculate Recommended Caloric Intake"
+                   
+              
+        
+                 Clicked="RadButton_ClickedCalculate"
+                />
+                </StackLayout>-->
+
+                </Grid>
+            </Frame>
+        </ScrollView>
+            
+    </ContentPage.Content>
+</ContentPage>

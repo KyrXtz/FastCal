@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+                              xmlns:telerikInput="clr-namespace:Telerik.XamarinForms.Input;assembly=Telerik.XamarinForms.Input"
+
+             x:Class="App3.Views.FoodInfo">
+    
+    <pages:PopupPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="EntryStyle" TargetType="Entry">
+                <Setter Property="PlaceholderColor" Value="#9cdaf1"/>
+                <Setter Property="TextColor" Value="#7dbbe6"/>
+            </Style>
+        </ResourceDictionary>
+    </pages:PopupPage.Resources>
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation
+      PositionIn="Center"
+      PositionOut="Center"
+      ScaleIn="1"
+      ScaleOut="0.7"
+      DurationIn="100"
+      EasingIn="Linear"/>
+    </pages:PopupPage.Animation>
+
+
+
+        <ScrollView
+    HorizontalOptions="Center"
+    VerticalOptions="Center">
+        
+        <AbsoluteLayout>
+            
+            <Frame
+        x:Name="FrameContainer"
+        Margin="15"
+        HorizontalOptions="Center"
+        BackgroundColor="White">
+                <StackLayout x:Name="sl"
+            IsClippedToBounds="True"
+            Padding="10, 5"
+            Spacing="3">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="5*" />
+                        </Grid.ColumnDefinitions>
+                        <Entry Grid.Row="0" Grid.Column="0" x:Name="FoodEntry" MaxLength="30" Unfocused="FoodEntry_Unfocused" IsVisible="False"></Entry>
+                        <Label Grid.Row="0" Grid.Column="0"  WidthRequest="250" x:Name="FoodName" Text="{Binding FoodName}" FontSize="Medium" FontAttributes="Bold"/>
+                    <!--<Label x:Name="TimeOfDay" Text="{Binding TimeOfDay}"/>-->
+                        <Label Grid.Row="1" Grid.Column="0" x:Name="FoodCal" Text="{Binding FoodCal}" VerticalTextAlignment="Center"/>
+                        <Label Grid.Row="2" Grid.Column="0" x:Name="FoodCarb" Text="{Binding FoodCarb}"/>
+                        <Label Grid.Row="3" Grid.Column="0" x:Name="FoodFat" Text="{Binding FoodFat}"/>
+                        <Label Grid.Row="4" Grid.Column="0" x:Name="FoodProt" Text="{Binding FoodProt}"/>
+                        <Label Grid.Row="5" Grid.Column="0" x:Name="IsCustom" Text="{Binding IsCustom}" />
+                        <Label Grid.Row="6" Grid.Column="0" x:Name="TimesPressed" Text="{Binding TimesPressed}"/>
+                        <Label Grid.Row="7" Grid.Column="0" x:Name="ClassId" Text="{Binding ClassId}"/>
+                        <StackLayout Grid.Row="8" Grid.Column="0" >
+                        <Label />
+                        <BoxView IsVisible="{Binding HasMoreInfo}"
+            HeightRequest="1" 
+            BackgroundColor="Black" 
+            HorizontalOptions="FillAndExpand" />
+                        <Label />
+                    </StackLayout>
+
+                        <Label Grid.Row="9" Grid.Column="0"  WidthRequest="250" x:Name="MoreInfo" Text="{Binding MoreInfo}"/>
+                        <telerikInput:RadButton Grid.Row="0" Grid.Column="1" x:Name="EditNameButton" TextColor="Black" ImageSource="edit.png"  FontSize="Small" FontAttributes="Bold"  BorderColor="White" CornerRadius="60" BackgroundColor="AliceBlue" VerticalOptions="Center" HorizontalOptions="End" HeightRequest="30"  WidthRequest="30" Clicked="EditNameButton_Clicked"  />
+                        <telerikInput:RadButton Grid.Row="9" Grid.Column="1" x:Name="RemoveEntryButton" TextColor="Black" ImageSource="minusone.png"  FontSize="Small" FontAttributes="Bold"  BorderColor="White" CornerRadius="60" BackgroundColor="AliceBlue" VerticalOptions="Center" HorizontalOptions="End" HeightRequest="30" WidthRequest="30" Clicked="RemoveButtonEntry"  />
+                    <!--<ImageButton  x:Name="RemoveEntryButton" Source="trash.png"   BorderColor="White" CornerRadius="60" BackgroundColor="AliceBlue" VerticalOptions="Center" HorizontalOptions="End" Clicked="RemoveButtonEntry"></ImageButton>-->
+                        <telerikInput:RadButton Grid.Row="10" Grid.Column="1" x:Name="ChangeMealTime" TextColor="Black" ImageSource="clock.png"  FontSize="Small" FontAttributes="Bold"  BorderColor="White" CornerRadius="60" BackgroundColor="AliceBlue" VerticalOptions="Center" HorizontalOptions="End" HeightRequest="30" WidthRequest="30" Clicked="ChangeMealTime_Clicked"  />
+
+                        <telerikInput:RadButton Grid.Row="11" Grid.Column="1" x:Name="DeleteButon" TextColor="Black" ImageSource="trash2.png"  FontSize="Small" FontAttributes="Bold"  BorderColor="White" CornerRadius="60" BackgroundColor="AliceBlue" VerticalOptions="Center"  HorizontalOptions="End" HeightRequest="30" WidthRequest="30" Clicked="DeleteButon_Clicked"  />
+                        <telerikInput:RadButton Grid.Row="12" Grid.Column="1" x:Name="UndoButton" TextColor="Black" ImageSource="undo.png"  FontSize="Small" FontAttributes="Bold"  BorderColor="White" CornerRadius="60" BackgroundColor="AliceBlue" VerticalOptions="Center"  HorizontalOptions="End" HeightRequest="30" WidthRequest="30" Clicked="UndoButton_Clicked"  />
+
+                        <Picker Grid.Row="13" Unfocused="ChangeTimeOfDay" x:Name="TimeOfDayPicker" IsVisible="False"></Picker>
+                    <!--<ImageButton Source="trash.png"  x:Name="DeleteButon"  BorderColor="White" CornerRadius="60" BackgroundColor="AliceBlue" VerticalOptions="Center" HorizontalOptions="End"  Clicked="DeleteButon_Clicked"></ImageButton>-->
+
+
+
+
+
+                    </Grid>
+                </StackLayout>
+              
+            </Frame>
+            
+            <ContentView
+          AbsoluteLayout.LayoutFlags="PositionProportional"
+          AbsoluteLayout.LayoutBounds="1, 0, -1, -1">
+                <ContentView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnCloseButtonTapped"/>
+                    <!--<SwipeGestureRecognizer Swiped="SwipeGestureRecognizer_Swiped"></SwipeGestureRecognizer>-->
+
+                </ContentView.GestureRecognizers>
+               
+                <Image
+          x:Name="CloseImage"
+          HeightRequest="30"
+          WidthRequest="30">
+                    <Image.Source>
+                        <OnPlatform
+              x:TypeArguments="ImageSource"
+              Android="close_circle_button.png"
+              iOS="close_circle_button.png"
+             />
+                    </Image.Source>
+                </Image>
+            </ContentView>
+        </AbsoluteLayout>
+    </ScrollView>
+        
+</pages:PopupPage>

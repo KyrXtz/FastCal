@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                          xmlns:telerikInput="clr-namespace:Telerik.XamarinForms.Input;assembly=Telerik.XamarinForms.Input"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+
+                
+             x:Class="App3.Views.Tutorials.MealTutorialView">
+    <pages:PopupPage.Content >
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition  Height="Auto"></RowDefinition>
+                <RowDefinition  Height="300"></RowDefinition>
+                <RowDefinition  Height="Auto"></RowDefinition>
+                <RowDefinition  Height="Auto"></RowDefinition>
+
+
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" HeightRequest="30"></Label>
+            <Frame x:Name="MealFrame" x:FieldModifier="public" BackgroundColor="Transparent"
+                           
+           Padding="20"
+                  HasShadow="False" HorizontalOptions="FillAndExpand" CornerRadius="5" OutlineColor="Transparent">
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition ></ColumnDefinition>
+                        <ColumnDefinition ></ColumnDefinition>
+                        <ColumnDefinition ></ColumnDefinition>
+
+
+                    </Grid.ColumnDefinitions>
+
+
+                    <telerikInput:RadButton    Grid.Column="0" Margin="0,29,0,0"
+                                     FontSize="50" VerticalContentAlignment="Center" IsVisible="True" HeightRequest = "50" WidthRequest="300"
+                                    BackgroundColor="White" Opacity="0" TextColor="Black" FontFamily="Quicksand-Regular#Quicksand"
+                                    FontAttributes="Bold" x:Name="OK" Text=""
+                                    BorderColor="White" CornerRadius="60"
+                                   
+                                    Clicked="OK_Clicked"
+                                    />
+
+                </Grid>
+            </Frame>
+            <Frame
+          Margin="0,-29,0,0"
+                Grid.Row="3"
+CornerRadius="15"
+Padding="0"
+BackgroundColor="AntiqueWhite"
+HasShadow="False"
+    >
+                <Label  WidthRequest="300" BackgroundColor="Transparent" VerticalOptions="Center" HorizontalOptions="Center" FontFamily="Quicksand-Regular#Quicksand" FontSize="Large" HorizontalTextAlignment="Center" Text="Click on a button to add it your daily calories! Don't worry about the count, you can reset them later." />
+            </Frame>
+        </Grid>
+    </pages:PopupPage.Content>
+</pages:PopupPage>

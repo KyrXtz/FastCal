@@ -1,0 +1,144 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CardsView" Version="2.3.6" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Rg.Plugins.Popup" Version="1.2.0.223" />
+    <PackageReference Include="Telerik.UI.for.Xamarin" Version="2019.3.1023.1" />
+    <PackageReference Include="Xam.Plugin.LatestVersion" Version="1.1.2" />
+    <PackageReference Include="Xamarin.FFImageLoading" Version="2.4.11.982" />
+    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
+    <PackageReference Include="Xamarin.FFImageLoading.Svg" Version="2.4.11.982" />
+    <PackageReference Include="Xamarin.Forms" Version="4.3.0.947036" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\Meals\MealView.xaml.cs">
+      <DependentUpon>MealView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\NewButtonViews\CreateCustomButton.xaml.cs">
+      <DependentUpon>CreateCustomButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\NewButtonViews\CreateManual.xaml.cs">
+      <DependentUpon>CreateManual.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\NewButtonViews\APIListView.xaml.cs">
+      <DependentUpon>APIListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Popups\RateGooglePopup.xaml.cs">
+      <DependentUpon>RateGooglePopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\SettingsView.xaml.cs">
+      <DependentUpon>SettingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\CalcCal.xaml.cs">
+      <DependentUpon>CalcCal.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Tutorials\MealTutorialView9.xaml.cs">
+      <DependentUpon>MealTutorialView9.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Tutorials\MealTutorialView8.xaml.cs">
+      <DependentUpon>MealTutorialView8.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Tutorials\MealTutorialView10.xaml.cs">
+      <DependentUpon>MealTutorialView10.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Tutorials\MealTutorialViewLast.xaml.cs">
+      <DependentUpon>MealTutorialViewLast.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Tutorials\MealTutorialView7.xaml.cs">
+      <DependentUpon>MealTutorialView7.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Tutorials\MealTutorialView6.xaml.cs">
+      <DependentUpon>MealTutorialView6.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Tutorials\MealTutorialView5.xaml.cs">
+      <DependentUpon>MealTutorialView5.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Tutorials\MealTutorialView4.xaml.cs">
+      <DependentUpon>MealTutorialView4.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Tutorials\MealTutorialView3.xaml.cs">
+      <DependentUpon>MealTutorialView3.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Tutorials\MealTutorialView2.xaml.cs">
+      <DependentUpon>MealTutorialView2.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Tutorials\MealTutorialView1.xaml.cs">
+      <DependentUpon>MealTutorialView1.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\NewButtonViews\CreateSearch.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\OverviewView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Popups\CustomAlerts\DeleteButtonPopupAlert.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SettingsView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Popups\FoodInfo.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Popups\LoadingPopup.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Meals\MealView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\NewButtonViews\CreateCustomButton.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\NewButtonViews\CreateManual.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\NewButtonViews\APIListView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Popups\PopupAlert.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\CalcCal.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Tutorials\MealTutorialView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Tutorials\TutorialView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\LoadingPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Meals\MealView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+  </ItemGroup>
+</Project>

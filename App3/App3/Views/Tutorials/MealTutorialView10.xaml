@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                          xmlns:telerikInput="clr-namespace:Telerik.XamarinForms.Input;assembly=Telerik.XamarinForms.Input"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+
+                
+             x:Class="App3.Views.Tutorials.MealTutorialView10">
+    <pages:PopupPage.Content >
+        <StackLayout>
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
+            </StackLayout.GestureRecognizers>
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition  Height="Auto"></RowDefinition>
+                    <RowDefinition  Height="300"></RowDefinition>
+                    <RowDefinition  Height="Auto"></RowDefinition>
+                    <RowDefinition  Height="Auto"></RowDefinition>
+
+
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" HeightRequest="30"></Label>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition ></ColumnDefinition>
+                        <ColumnDefinition ></ColumnDefinition>
+                        <ColumnDefinition ></ColumnDefinition>
+
+
+                    </Grid.ColumnDefinitions>
+
+
+                    <!--<telerikInput:RadButton    Grid.Column="0" 
+                                     FontSize="50" VerticalContentAlignment="Center" IsVisible="True" HeightRequest = "50" WidthRequest="300"
+                                    BackgroundColor="White" Opacity="0" TextColor="Black" FontFamily="Quicksand-Regular#Quicksand"
+                                    FontAttributes="Bold" x:Name="OK" Text=""
+                                    BorderColor="White" CornerRadius="60"
+                                   
+                                    Clicked="OK_Clicked"
+                                    />-->
+
+                </Grid>
+                <Frame
+                Grid.Row="3"
+                WidthRequest="300"
+CornerRadius="15"
+Padding="0"
+BackgroundColor="AntiqueWhite"
+HasShadow="False"
+    >
+                    <Label x:Name="TutLabel" WidthRequest="300" BackgroundColor="Transparent" VerticalOptions="Center" HorizontalOptions="Center" FontFamily="Quicksand-Regular#Quicksand"  FontSize="Large" HorizontalTextAlignment="Center" Text=""/>
+                </Frame>
+            </Grid>
+            
+        </StackLayout>
+    </pages:PopupPage.Content>
+</pages:PopupPage>

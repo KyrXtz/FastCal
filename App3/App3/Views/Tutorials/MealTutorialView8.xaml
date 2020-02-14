@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                          xmlns:telerikInput="clr-namespace:Telerik.XamarinForms.Input;assembly=Telerik.XamarinForms.Input"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+
+                
+             x:Class="App3.Views.Tutorials.MealTutorialView8">
+    <pages:PopupPage.Content >
+        <StackLayout>
+            <ContentView >
+                <StackLayout >
+                    <Frame
+          
+               Margin="0,300,0,0"
+CornerRadius="15"
+Padding="0"
+BackgroundColor="AntiqueWhite"
+HasShadow="False"
+    >
+                        <Label  WidthRequest="300" BackgroundColor="Transparent" VerticalOptions="Center" HorizontalOptions="Center" FontFamily="Quicksand-Regular#Quicksand" FontSize="Large" HorizontalTextAlignment="Center" Text="Almost done! You can also create meals by merging buttons. Try that now, by long clicking the add button." />
+                    </Frame>
+                    <ScrollView>
+
+                        <Grid  x:Name="fabGrid">
+                            <Grid.RowDefinitions>
+                                <RowDefinition  Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+
+                            </Grid.RowDefinitions>
+                            <!--<fab:FloatingActionButtonView Grid.Row="4" AbsoluteLayout.LayoutBounds="1, 1, AutoSize, AutoSize" AbsoluteLayout.LayoutFlags="PositionProportional" ImageName="edit.png" />-->
+
+                            <!--<ImageButton 
+            Grid.Row="2" Margin="0,0,50,50" Opacity="0.8"  Clicked="AddButtonWindow" Source="addfab5.png" BackgroundColor="Transparent"  HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand"  >
+              
+            </ImageButton>-->
+
+                            <!--<ff:SvgCachedImage Grid.Row="2" Margin="0,-200,-300,0"  Source="black.svg" BackgroundColor="Transparent" Style="{StaticResource FABPrimary}" >
+                <ff:SvgCachedImage.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="AddButtonWindow"/>
+                </ff:SvgCachedImage.GestureRecognizers>
+            </ff:SvgCachedImage>-->
+
+
+                            <!--<Button Grid.Row="4" 
+                Clicked="AddButtonWindow" IsVisible="True"
+              
+                Style="{StaticResource FABPrimary}"  />-->
+
+                            <Label Grid.Row="0" HeightRequest="30"></Label>
+                            <Grid  Grid.Row="1" x:Name="ButtonGrid"  x:FieldModifier="public">
+                                <Grid.RowDefinitions>
+
+
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition ></ColumnDefinition>
+                                    <ColumnDefinition ></ColumnDefinition>
+                                    <ColumnDefinition ></ColumnDefinition>
+
+
+                                </Grid.ColumnDefinitions>
+                               
+                                <Label Grid.Row="4"   HeightRequest="200"></Label>
+                                <!--<Label Grid.Row="3" HeightRequest="270"></Label>-->
+
+
+                                <!--<ContentView  Margin="80, -35, 0, 0" Grid.Row="0" Grid.Column="0" >
+                    <Label InputTransparent="True" IsEnabled="False" x:Name="LblYes1" Text="{Binding timesPressed}" TextColor="Black" FontSize="Small" HorizontalOptions="Center" VerticalOptions="Center" ></Label>
+                </ContentView>-->
+
+
+
+
+                            </Grid>
+                        </Grid>
+                    </ScrollView>
+                    <!--<Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+
+                </Grid.RowDefinitions>
+                <telerikInput:RadButton Grid.Row="0" Margin="250,400,0,0"  
+                                     FontSize="50" VerticalContentAlignment="End" HeightRequest ="65" WidthRequest="65" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                                    BackgroundColor="ForestGreen" TextColor="White" FontFamily="Quicksand-Regular#Quicksand"
+                                    FontAttributes="Bold" Text="+"
+                                    BorderColor="White" CornerRadius="60"
+                                    ClassId="addFab" 
+                                    Clicked="AddButtonWindow"
+                                    />
+                <telerikInput:RadButton Grid.Row="1"   Margin="250,0,0,0" 
+                                     FontSize="50" VerticalContentAlignment="End"
+                                    BackgroundColor="MediumVioletRed" TextColor="White" FontFamily="Quicksand-Regular#Quicksand"
+                                    FontAttributes="Bold" Text="++"
+                                    BorderColor="White" CornerRadius="60"
+                                    ClassId="addFab" 
+                                    Clicked="StartCombine"
+                                    />
+                <telerikInput:RadButton  Grid.Row="2"   
+                                     FontSize="50" VerticalContentAlignment="Center" IsVisible="False"
+                                    BackgroundColor="White" Opacity="0.5" TextColor="Black" FontFamily="Quicksand-Regular#Quicksand"
+                                    FontAttributes="Bold" x:Name="CancelMerge" Text="Cancel"
+                                    BorderColor="White" CornerRadius="20"
+                                    ClassId="addFab" 
+                                    Clicked="CancelCombine"
+                                    />
+            </Grid>-->
+                </StackLayout>
+            </ContentView>
+            <StackLayout  >
+                <telerikInput:RadButton x:Name="fabbtntut" Margin="250,0,0,0" FontSize="50" VerticalContentAlignment="End" HeightRequest="75"
+                                        WidthRequest="65" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                                      Clicked="fbbtnclicked" BackgroundColor="White" Opacity="0.5" Text="+" BorderColor="White" CornerRadius="60" ></telerikInput:RadButton>
+              
+            </StackLayout>
+        </StackLayout>
+    </pages:PopupPage.Content>
+</pages:PopupPage>

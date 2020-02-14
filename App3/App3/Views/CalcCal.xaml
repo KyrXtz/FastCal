@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                                       xmlns:telerikInput="clr-namespace:Telerik.XamarinForms.Input;assembly=Telerik.XamarinForms.Input"
+
+             x:Class="App3.Views.CalcCal">
+    <ContentView.Content >
+        <ScrollView x:Name="myScrollView">
+            <Frame x:Name="MealFrame" x:FieldModifier="public"
+                           
+           Padding="20"
+                  HasShadow="False" HorizontalOptions="FillAndExpand" CornerRadius="5" OutlineColor="Transparent">
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+
+
+
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" FontSize="Large" FontFamily="Quicksand-Bold.otf#Quicksand" HorizontalTextAlignment="Center" Text="Calculate Resting Metabolic Rate"></Label>
+                    <Grid Grid.Row="1">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+
+
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0" VerticalOptions="Center"
+                HorizontalOptions="Start" FontSize="Medium"  Text="Age"></Label>
+                        <Entry x:Name="Age" MaxLength="3"  VerticalOptions="Center"
+                HorizontalOptions="End"  WidthRequest ="150" Keyboard="Numeric" Grid.Row="0" Grid.Column="1" Unfocused="CheckRMR" ></Entry>
+
+                        <Label Grid.Row="1" Grid.Column="0" VerticalOptions="Center"
+                HorizontalOptions="Start" FontSize="Medium"  Text="Height (cm)"></Label>
+                        <Entry x:Name="Height" MaxLength="3"  VerticalOptions="Center"
+                HorizontalOptions="End"  WidthRequest ="150" Keyboard="Numeric" Grid.Row="1" Grid.Column="1" Unfocused="CheckRMR" ></Entry>
+
+                        <Label Grid.Row="2" Grid.Column="0" VerticalOptions="Center"
+                HorizontalOptions="Start" FontSize="Medium"  Text="Weight (kg)"></Label>
+                        <Entry x:Name="Weight" MaxLength="3"  VerticalOptions="Center"
+                HorizontalOptions="End"  WidthRequest ="150" Keyboard="Numeric" Grid.Row="2" Grid.Column="1" Unfocused="CheckRMR" ></Entry>
+
+                        <Label Grid.Row="3" Grid.Column="0" VerticalOptions="Center"
+                HorizontalOptions="Start" FontSize="Medium"  Text="Sex"></Label>
+
+                        <Picker x:Name="Sex" Grid.Row="3" Grid.Column="1" SelectedIndexChanged="CalculateRMR">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Male</x:String>
+                                    <x:String>Female</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+                        <telerikInput:RadButton IsVisible="False" Grid.Row="4" Grid.Column="1" Text="Go"       
+                 Clicked="CalculateRMR"
+                />
+
+                    </Grid>
+                    <Label Grid.Row="2" FontSize="Large" FontFamily="Quicksand-Italic.otf#Quicksand" HorizontalTextAlignment="Center" x:Name="RMR"></Label>
+
+                    <Label Grid.Row="3" FontSize="Large" FontFamily="Quicksand-Bold.otf#Quicksand" HorizontalTextAlignment="Center" Text="Calculate Total Daily Energy Expenditure"></Label>
+                    <Grid Grid.Row="4">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+
+
+
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0" VerticalOptions="Center"
+                HorizontalOptions="Start" FontSize="Medium"  Text="Activity Level"></Label>
+                        <Picker WidthRequest ="150" x:Name="Activitylvl" Grid.Row="0" Grid.Column="1" SelectedIndexChanged="Activitylvl_SelectedIndexChanged" Unfocused="CheckTDEE">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Sedentary</x:String>
+                                    <x:String>Mild</x:String>
+                                    <x:String>Moderate</x:String>
+                                    <x:String>Heavy</x:String>
+                                    <x:String>Extreme</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+
+                        <telerikInput:RadButton IsVisible="False" Grid.Row="2" Grid.Column="1" Text="Go"       
+                 Clicked="CalculateTDEE"
+                />
+                    </Grid>
+                    <Label VerticalOptions="Center" HorizontalTextAlignment="Center" HeightRequest="200" VerticalTextAlignment="Center" FontSize="Medium" HorizontalOptions="Center" Grid.Row="5" x:Name="InfoLabel"></Label>
+                    <Label Grid.Row="6" FontSize="Large" FontFamily="Quicksand-Italic.otf#Quicksand" HorizontalTextAlignment="Center" x:Name="TDEE"></Label>
+                    <Label Grid.Row="7" FontSize="Large" FontFamily="Quicksand-Bold.otf#Quicksand" HorizontalTextAlignment="Center" x:Name="SetGoalLabel" Text="Set Goal"></Label>
+                    <Grid Grid.Row="8">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+
+                        </Grid.RowDefinitions>
+
+                        <Slider Grid.Row="0" x:Name="Goalslider" Maximum="4"
+                ValueChanged="Slider_ValueChanged"></Slider>
+
+
+
+                        <Label Grid.Row="1" FontFamily="Quicksand-Regular.otf#Quicksand" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large" HorizontalOptions="Center"  x:Name="SliderTitleLabel"></Label>
+                        <Label Grid.Row="2" FontFamily="Quicksand-Italic.otf#Quicksand" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Medium" HorizontalOptions="Center"  x:Name="SliderInfoLabel"></Label>
+                        <Label Grid.Row="3" FontSize="Large" FontFamily="Quicksand-Italic.otf#Quicksand" HorizontalTextAlignment="Center" x:FieldModifier="public" x:Name="SliderGoalCalories"></Label>
+
+
+                    </Grid>
+                </Grid>
+            </Frame>
+        </ScrollView>
+    </ContentView.Content>
+</ContentView>

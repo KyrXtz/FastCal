@@ -1,0 +1,319 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+xmlns:telerikGauges="clr-namespace:Telerik.XamarinForms.DataVisualization.Gauges;assembly=Telerik.XamarinForms.DataVisualization"
+xmlns:telerikCommon="clr-namespace:Telerik.XamarinForms.Common;assembly=Telerik.XamarinForms.Common"
+xmlns:telerikChart="clr-namespace:Telerik.XamarinForms.Chart;assembly=Telerik.XamarinForms.Chart"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:telerikInput="clr-namespace:Telerik.XamarinForms.Input;assembly=Telerik.XamarinForms.Input"
+             xmlns:v="clr-namespace:App3.Views"
+             x:Class="App3.Views.OverviewView"
+             
+             x:Name="OverViewPage"
+            >
+
+    <ContentPage.Resources>
+
+        <Color x:Key="DarkButtonBackground">#921813</Color>
+        <Style x:Key="FABPrimary" TargetType="telerikInput:RadButton">
+            <!--<Setter Property="CornerRadius" Value="100"/>-->
+            <Setter Property="BackgroundColor" Value="{StaticResource DarkButtonBackground}"/>
+            <Setter Property="HeightRequest" Value="65"/>
+            <Setter Property="WidthRequest" Value="65"/>
+            <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+            <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+            <!--<Setter Property="Padding" Value="0"/>
+            <Setter Property="Margin" Value="0,0,0,0"/>-->
+        </Style>
+        <!--<v:DayViewAppointmentTemplateSelector x:Key="DayViewAppointmentTemplateSelector">
+            <v:DayViewAppointmentTemplateSelector.AllDay>
+                <DataTemplate>
+                    <Grid>
+                        <Label Text="{Binding Title}" FontSize="16" TextColor="Black"/>
+                    </Grid>
+                </DataTemplate>
+            </v:DayViewAppointmentTemplateSelector.AllDay>
+            <v:DayViewAppointmentTemplateSelector.NotAllDay>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <StackLayout>
+                            <Label Text="{Binding Title}" FontSize="20" TextColor="Black"/>
+                            <Label Text="{Binding Detail}" FontSize="14" TextColor="Black"/>
+                        </StackLayout>
+                        <Image Source="favourite.png" VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="1"/>
+                    </Grid>
+                </DataTemplate>
+            </v:DayViewAppointmentTemplateSelector.NotAllDay>
+        </v:DayViewAppointmentTemplateSelector>-->
+    </ContentPage.Resources>
+
+
+    
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" ></RowDefinition>
+                <RowDefinition Height="Auto" ></RowDefinition>
+            <RowDefinition Height="*" ></RowDefinition>
+            <RowDefinition Height="Auto" ></RowDefinition>
+
+
+
+
+
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" x:Name="OverviewMainGrid" HeightRequest="200" x:FieldModifier="public">
+            <!--<Grid.GestureRecognizers>
+                --><!--<TapGestureRecognizer Swip="DonutTapped"></TapGestureRecognizer>--><!--
+                <SwipeGestureRecognizer Swiped="SwipeGestureRecognizer_Swiped"></SwipeGestureRecognizer>
+            </Grid.GestureRecognizers>-->
+            <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" ></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+              
+
+
+
+
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition ></ColumnDefinition>
+                    <ColumnDefinition ></ColumnDefinition>
+                 
+
+
+
+
+
+                </Grid.ColumnDefinitions>
+
+
+
+
+
+            <!--<Grid Grid.Row="0" Grid.Column="0" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" ></RowDefinition>
+                    <RowDefinition Height="Auto" ></RowDefinition>
+
+                    <RowDefinition Height="*"></RowDefinition>
+
+
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" ></ColumnDefinition>
+                        <ColumnDefinition Width="Auto" ></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <BoxView Grid.Column="0" HeightRequest="10" WidthRequest="10" HorizontalOptions="Start" VerticalOptions="Center" Color="Red"/>
+                    <Label Grid.Column="1" FontSize="Small" HorizontalOptions="Center" VerticalOptions="Center" Text="Remaining Calories"/>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" ></ColumnDefinition>
+                        <ColumnDefinition Width="Auto" ></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <BoxView Grid.Column="0" HeightRequest="10" WidthRequest="10" HorizontalOptions="Start" VerticalOptions="Center" Color="Green"/>
+                    <Label Grid.Column="1" FontSize="Small" HorizontalOptions="Center" VerticalOptions="Center" Text="Eaten Calories"/>
+                </Grid>
+            </Grid>-->
+            <Label Grid.Row="0" Grid.Column="0" FontFamily="Quicksand-Bold.otf#Quicksand" FontSize="Small" HorizontalOptions="Center" VerticalOptions="Center" Text="Calories"/>
+
+            <telerikChart:RadPieChart   x:Name="BarSeries1Main" Grid.Row="1" Grid.Column="0">
+                    
+                <telerikChart:RadPieChart.Series>
+                    <telerikChart:DonutSeries InnerRadiusFactor="0.4" ShowLabels="True" x:Name="BarSeries1" ValueBinding="Value"  RadiusFactor="0.8">
+                        
+                    </telerikChart:DonutSeries>
+                </telerikChart:RadPieChart.Series>
+            </telerikChart:RadPieChart>
+            <!--<Grid Grid.Row="0" Grid.Column="1" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" ></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+
+
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" ></ColumnDefinition>
+                            <ColumnDefinition Width="Auto" ></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <BoxView Grid.Column="0" HeightRequest="10" WidthRequest="10" HorizontalOptions="Start" VerticalOptions="Center" Color="Red"/>
+                        <Label Grid.Column="1" FontSize="Small" HorizontalOptions="Center" VerticalOptions="Center" Text="Remaining Carbs"/>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" ></ColumnDefinition>
+                            <ColumnDefinition Width="Auto" ></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <BoxView Grid.Column="0" HeightRequest="10" WidthRequest="10" HorizontalOptions="Start" VerticalOptions="Center" Color="Green"/>
+                        <Label Grid.Column="1" FontSize="Small" HorizontalOptions="Center" VerticalOptions="Center" Text="Eaten Carbs"/>
+                    </Grid>
+                </Grid>-->
+            <Label Grid.Row="0" Grid.Column="1" FontFamily="Quicksand-Bold.otf#Quicksand" FontSize="Small" HorizontalOptions="Center" VerticalOptions="Center" Text="Carbs"/>
+
+            <telerikChart:RadPieChart x:Name="BarSeries2Main"  Grid.Row="1" Grid.Column="1">
+                    <telerikChart:RadPieChart.Series>
+                        <telerikChart:DonutSeries InnerRadiusFactor="0.4" ShowLabels="True" x:Name="BarSeries2" ValueBinding="Value" RadiusFactor="0.8">
+
+                        </telerikChart:DonutSeries>
+                    </telerikChart:RadPieChart.Series>
+                </telerikChart:RadPieChart>
+           
+
+
+
+
+
+
+
+            <!--<ContentView  Margin="80, -35, 0, 0" Grid.Row="0" Grid.Column="0" >
+                    <Label InputTransparent="True" IsEnabled="False" x:Name="LblYes1" Text="{Binding timesPressed}" TextColor="Black" FontSize="Small" HorizontalOptions="Center" VerticalOptions="Center" ></Label>
+                </ContentView>-->
+
+
+
+
+        </Grid>
+        <!--<Grid Grid.Row="0" Grid.Column="2" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" ></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+
+
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" ></ColumnDefinition>
+                            <ColumnDefinition Width="Auto" ></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <BoxView Grid.Column="0" HeightRequest="10" WidthRequest="10" HorizontalOptions="Start" VerticalOptions="Center" Color="Red"/>
+                        <Label Grid.Column="1" FontSize="Small" HorizontalOptions="Center" VerticalOptions="Center" Text="Remaining Protein"/>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" ></ColumnDefinition>
+                            <ColumnDefinition Width="Auto" ></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <BoxView Grid.Column="0" HeightRequest="10" WidthRequest="10" HorizontalOptions="Start" VerticalOptions="Center" Color="Green"/>
+                        <Label Grid.Column="1" FontSize="Small" HorizontalOptions="Center" VerticalOptions="Center" Text="Eaten Protein"/>
+                    </Grid>
+                </Grid>-->
+        <Grid Grid.Row="1" x:Name="OverviewMainGrid2" HeightRequest="200"   x:FieldModifier="public">
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" ></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+               
+
+
+
+
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition ></ColumnDefinition>
+                <ColumnDefinition ></ColumnDefinition>
+
+
+
+
+
+
+            </Grid.ColumnDefinitions>
+
+
+
+            <Label Grid.Row="0" Grid.Column="0" FontFamily="Quicksand-Bold.otf#Quicksand" FontSize="Small" HorizontalOptions="Center" VerticalOptions="Center" Text="Protein"/>
+
+            <telerikChart:RadPieChart x:Name="BarSeries3Main"  Grid.Row="1" Grid.Column="0">
+                <telerikChart:RadPieChart.Series>
+                    <telerikChart:DonutSeries InnerRadiusFactor="0.4" ShowLabels="True" x:Name="BarSeries3" ValueBinding="Value" RadiusFactor="0.8">
+
+                    </telerikChart:DonutSeries>
+                </telerikChart:RadPieChart.Series>
+            </telerikChart:RadPieChart>
+            <!--<Grid Grid.Row="0" Grid.Column="3" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" ></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+
+
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" ></ColumnDefinition>
+                            <ColumnDefinition Width="Auto" ></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <BoxView Grid.Column="0" HeightRequest="10" WidthRequest="10" HorizontalOptions="Start" VerticalOptions="Center" Color="Red"/>
+                        <Label Grid.Column="1" FontSize="Small" HorizontalOptions="Center" VerticalOptions="Center" Text="Remaining Fat"/>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" ></ColumnDefinition>
+                            <ColumnDefinition Width="Auto" ></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <BoxView Grid.Column="0" HeightRequest="10" WidthRequest="10" HorizontalOptions="Start" VerticalOptions="Center" Color="Green"/>
+                        <Label Grid.Column="1" FontSize="Small" HorizontalOptions="Center" VerticalOptions="Center" Text="Eaten Fat"/>
+                    </Grid>
+                </Grid>-->
+            <Label Grid.Row="0" Grid.Column="1" FontFamily="Quicksand-Bold.otf#Quicksand" FontSize="Small" HorizontalOptions="Center" VerticalOptions="Center" Text="Fat"/>
+
+            <telerikChart:RadPieChart x:Name="BarSeries4Main"  Grid.Row="1" Grid.Column="1">
+                <telerikChart:RadPieChart.Series>
+                    <telerikChart:DonutSeries InnerRadiusFactor="0.4" ShowLabels="True" x:Name="BarSeries4" ValueBinding="Value" RadiusFactor="0.8">
+
+                    </telerikChart:DonutSeries>
+                </telerikChart:RadPieChart.Series>
+            </telerikChart:RadPieChart>
+            <!--<Label Grid.Row="0" Grid.Column="1"  Text="RadPie2" FontSize="Large" />
+                <telerikChart:RadPieChart MinimumHeightRequest="500"  Grid.Row="1" Grid.Column="1">
+                <telerikChart:RadPieChart.Series>
+                    <telerikChart:DonutSeries ShowLabels="True" x:Name="BarSeries5" ValueBinding="Value" RadiusFactor="1.2">
+
+                    </telerikChart:DonutSeries>
+                </telerikChart:RadPieChart.Series>
+            </telerikChart:RadPieChart>-->
+
+        </Grid>
+        <Grid Grid.Row="2"  HeightRequest="200" x:Name="OverviewMainGrid3"   x:FieldModifier="public">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" ></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="33*" ></ColumnDefinition>
+                <ColumnDefinition Width="33*" ></ColumnDefinition>
+                <ColumnDefinition Width="33*" ></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <telerikInput:RadButton x:Name="clearBtn" VerticalOptions="End" Grid.Row="0" Grid.Column="0" Text="Clear Day" Clicked="RadButton_Clicked"></telerikInput:RadButton>
+            <BoxView Grid.Row="0" Grid.Column="1" HeightRequest="10" WidthRequest="10" HorizontalOptions="End" VerticalOptions="Center" Color="Red"/>
+            <Label Grid.Row="0" Grid.Column="2" FontSize="Medium" HorizontalOptions="Center" VerticalOptions="Center" Text="Remaining"/>
+            <BoxView Grid.Row="1" Grid.Column="1" HeightRequest="10" WidthRequest="10" HorizontalOptions="End" VerticalOptions="Center" Color="Green"/>
+            <Label Grid.Row="1" Grid.Column="2" FontSize="Medium" HorizontalOptions="Center" VerticalOptions="Center" Text="Consumed"/>
+
+
+        </Grid>
+
+        <telerikInput:RadCalendar CellTapped="Calendar_CellTapped" SelectionChanged="Calendar_SelectionChanged"  SelectionMode="Single" NativeControlLoaded="ControlLoaded" VerticalOptions="Start" HeightRequest="100"  Grid.Row="3" x:Name="calendar" ViewMode="Week" >
+            
+            <!--<telerikInput:RadCalendar.DayViewStyle>
+                <telerikInput:DayViewStyle AllDayAppointmentBackgroundColor="Blue"
+                                       AllDayAppointmentTextColor="White"
+                                       AllDayAppointmentFontSize="12"
+                                       TimelineLabelsTextColor="DarkGray"
+                                       TimelineLabelsFontSize="10"
+                                       AppointmentFontSize="12"
+                                       AppointmentDetailsFontSize="10"/>
+            </telerikInput:RadCalendar.DayViewStyle>-->
+        
+        </telerikInput:RadCalendar>
+        </Grid>
+    
+</ContentPage>

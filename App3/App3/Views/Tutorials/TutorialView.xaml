@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:cards="clr-namespace:PanCardView;assembly=PanCardView"
+    xmlns:controls="clr-namespace:PanCardView.Controls;assembly=PanCardView"
+    xmlns:proc="clr-namespace:PanCardView.Processors;assembly=PanCardView"
+     xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+   x:Class="App3.Views.TutorialView"
+    BackgroundColor="Beige"
+    Title="Carousel Xaml">
+
+
+    <ContentView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+        <Grid  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="85*" />
+                <RowDefinition  Height="15*" />
+
+
+
+
+
+            </Grid.RowDefinitions>
+            <cards:CarouselView  Grid.Row="0"
+        x:Name="MainCarouselView"
+        PropertyChanged="MainCarouselView_PropertyChanged"
+        SlideShowDuration="0"
+        SelectedIndex="0">
+
+            <x:Arguments>
+                <proc:BaseCarouselFrontViewProcessor ScaleFactor="0.5" OpacityFactor="0" RotationFactor="0.1" />
+                <proc:BaseCarouselBackViewProcessor ScaleFactor="0.5" OpacityFactor="0" RotationFactor="0.1" />
+            </x:Arguments>
+
+            <cards:CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <ContentView>
+                            <Frame 
+                       
+                        BackgroundColor="Beige">
+                                <!--VerticalOptions="Center"
+                        HorizontalOptions="Center"
+                        HeightRequest="300"
+                        WidthRequest="300"
+                        Padding="0" 
+                        HasShadow="false"
+                        IsClippedToBounds="true"
+                        CornerRadius="10"-->
+                                <ff:CachedImage Aspect="AspectFit"  Source="{Binding .}"/>
+
+                            </Frame>
+                        </ContentView>
+                </DataTemplate>
+            </cards:CarouselView.ItemTemplate>
+            <controls:IndicatorsControl ToFadeDuration="1500"/>
+            <controls:LeftArrowControl ToFadeDuration="2500"/>
+            <controls:RightArrowControl ToFadeDuration="2500"/>
+        </cards:CarouselView>
+            <Label   Grid.Row="1"  x:Name="IndexLabel" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center"  FontFamily="Quicksand-Regular#Quicksand" ></Label>
+
+        </Grid>
+    </ContentView>
+
+</ContentPage>
+<!--<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+   xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:cards="clr-namespace:PanCardView;assembly=PanCardView"
+
+    x:Class="App2.Views.TutorialView">-->
+<!--xmlns:cards="clr-namespace:PanCardView;assembly=PanCardView"-->
+
+<!--xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"-->
+<!--xmlns:control="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"-->
+<!--
+
+  <ContentPage.Content>
+        <ContentView BackgroundColor="BlanchedAlmond" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            -->
+<!--<Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+               </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>-->
+<!--
+           
+            
+                <cards:CarouselView  x:Name="MainCarouselView">
+                <cards:CarouselView.ItemTemplate>
+                    <DataTemplate >
+                                -->
+<!--<Image Aspect="AspectFit" Source="{Binding .}"></Image>-->
+<!--<ff:CachedImage Aspect="AspectFill"  Source="{Binding .}"/>-->
+<!--
+
+                      
+                                <ff:CachedImage Aspect="AspectFit"  Source="{Binding .}"/>
+
+                           
+
+
+                        </DataTemplate>
+                </cards:CarouselView.ItemTemplate>
+            </cards:CarouselView>
+              -->
+<!--drawable/giph2y.gif-->
+
+<!--</Grid>-->
+<!--
+        </ContentView>
+    </ContentPage.Content>
+</ContentPage>-->
+
+

@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+     xmlns:cards="clr-namespace:PanCardView;assembly=PanCardView"
+    xmlns:controls="clr-namespace:PanCardView.Controls;assembly=PanCardView"
+    xmlns:proc="clr-namespace:PanCardView.Processors;assembly=PanCardView"
+             xmlns:telerikPrimitives="clr-namespace:Telerik.XamarinForms.Primitives;assembly=Telerik.XamarinForms.Primitives"
+
+
+BackgroundColor="Beige"
+            x:Class="App3.Views.CreateCustomButton">
+    <!--xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+            xmlns:local="clr-namespace:App3.TriggerActions"-->
+    <!--<TabbedPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="NavigationPage">
+           
+
+                <Style.Triggers>
+                    <EventTrigger Event="Clicked">
+                        <local:LoadingAction/>
+                    </EventTrigger>
+                </Style.Triggers>
+            </Style>
+        </ResourceDictionary>
+    </TabbedPage.Resources>-->
+    
+    
+    
+    <!--<ContentView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <cards:CarouselView 
+        x:Name="MainCardsView"
+        SlideShowDuration="0"
+
+        SelectedIndex="0">
+
+            <x:Arguments>
+                <proc:BaseCubeFrontViewProcessor ScaleFactor="0.5" OpacityFactor="0" RotationFactor="0.1" />
+                <proc:BaseCubeBackViewProcessor ScaleFactor="0.5" OpacityFactor="0" RotationFactor="0.1" />
+            </x:Arguments>
+
+            <cards:CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <ContentView>
+                        <Frame 
+                       
+                        BackgroundColor="Beige">
+                            --><!--VerticalOptions="Center"
+                        HorizontalOptions="Center"
+                        HeightRequest="300"
+                        WidthRequest="300"
+                        Padding="0" 
+                        HasShadow="false"
+                        IsClippedToBounds="true"
+                        CornerRadius="10"--><!--
+                            <ContentView Content="{Binding .}"/>
+
+
+                        </Frame>
+                    </ContentView>
+                </DataTemplate>
+            </cards:CarouselView.ItemTemplate>
+
+            <controls:IndicatorsControl ToFadeDuration="1500"/>
+            <controls:LeftArrowControl ToFadeDuration="2500"/>
+            <controls:RightArrowControl ToFadeDuration="2500"/>
+        </cards:CarouselView>
+    </ContentView>-->
+
+    
+            <ContentView  HorizontalOptions="FillAndExpand" VerticalOptions="Fill">
+        
+            <telerikPrimitives:RadSlideView SlidedToIndex="SlideView_SlidedToIndex"  HeightRequest="1000" x:Name="slideView"  IsInfiniteScrollingEnabled="False"  BackgroundColor="Beige">
+        <telerikPrimitives:RadSlideView.ItemTemplate>
+            <DataTemplate>
+                <ContentView Content="{Binding .}">
+                   
+                </ContentView>
+            </DataTemplate>
+        </telerikPrimitives:RadSlideView.ItemTemplate>
+    </telerikPrimitives:RadSlideView>
+      
+    </ContentView>
+            
+   
+</ContentPage>
+    

@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+                              xmlns:telerikInput="clr-namespace:Telerik.XamarinForms.Input;assembly=Telerik.XamarinForms.Input"
+
+             x:Class="App3.Views.Tutorials.MealTutorialView2">
+    <pages:PopupPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="EntryStyle" TargetType="Entry">
+                <Setter Property="PlaceholderColor" Value="#9cdaf1"/>
+                <Setter Property="TextColor" Value="#7dbbe6"/>
+            </Style>
+        </ResourceDictionary>
+    </pages:PopupPage.Resources>
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation
+      PositionIn="Bottom"
+      PositionOut="Center"
+      ScaleIn="1"
+      ScaleOut="0.7"
+      DurationIn="200"
+      EasingIn="BounceOut"/>
+    </pages:PopupPage.Animation>
+    
+    <ScrollView
+    HorizontalOptions="Center"
+    VerticalOptions="Center">
+      
+                <StackLayout
+            IsClippedToBounds="True"
+            Padding="10, 5"
+            Spacing="3">
+
+                <Label x:Name="FoodName" FontSize="Medium" FontFamily="Quicksand-Bold#Quicksand"/>
+                    <Label x:Name="FoodCal" VerticalTextAlignment="Center"/>
+
+                <!--<Label x:Name="TimeOfDay" Text="{Binding TimeOfDay}"/>-->
+                    <Label x:Name="FoodCarb" />
+                    <Label x:Name="FoodFat" />
+                    <Label x:Name="FoodProt" />
+                    <Label x:Name="IsCustom"  />
+                    <Label x:Name="TimesPressed" />
+                    <Label x:Name="ClassId"/>
+                    <StackLayout >
+                        <Label />
+                    <BoxView Opacity="0"
+            HeightRequest="1" 
+            BackgroundColor="Black" 
+            HorizontalOptions="FillAndExpand" />
+                        <Label />
+                    </StackLayout>
+            <Frame
+                x:Name="FrameTut"
+              WidthRequest="300"
+Margin="0,-105,0,0"
+CornerRadius="15"
+Padding="0"
+BackgroundColor="AntiqueWhite"
+HasShadow="False"
+    >
+                <Label  BackgroundColor="Transparent" HorizontalTextAlignment="Center" x:Name="TutLabel" FontSize="Large" FontFamily="Quicksand-Bold#Quicksand"  >
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
+                    </Label.GestureRecognizers>
+                    </Label>
+            </Frame>
+            <telerikInput:RadButton Margin="0,0,0,0" Opacity="0" x:Name="TutRemoveEntryButton" TextColor="Black"  FontSize="Small" HeightRequest="30" WidthRequest="30" FontAttributes="Bold"  BorderColor="White" CornerRadius="60" BackgroundColor="AliceBlue"  VerticalOptions="Center" HorizontalOptions="Center" Clicked="TutRemoveEntryButton_Clicked" />
+                    <BoxView x:Name="RemoveEntryBoxView"
+            HeightRequest="1" 
+            Opacity="0"
+            HorizontalOptions="FillAndExpand"  />
+            <telerikInput:RadButton Opacity="0" Margin="0,75,0,0" x:Name="TutDeleteButon" TextColor="Black"  FontSize="Small" HeightRequest="30" WidthRequest="30" FontAttributes="Bold"  BorderColor="White" CornerRadius="60" BackgroundColor="AliceBlue"  VerticalOptions="Center" HorizontalOptions="Center" Clicked="TutDeleteButon_Clicked"  />
+
+
+
+
+
+
+
+                </StackLayout>
+      
+    </ScrollView>
+</pages:PopupPage>
+
+<!--<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                          xmlns:telerikInput="clr-namespace:Telerik.XamarinForms.Input;assembly=Telerik.XamarinForms.Input"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+
+                
+             x:Class="App3.Views.Tutorials.MealTutorialView2">
+    <pages:PopupPage.Content >
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center" FontFamily="Quicksand-Regular#Quicksand" FontSize="Large" Text="Wow! You did it! Was it that hard???????" />
+
+            <telerikInput:RadButton    Grid.Row="1" 
+                                     FontSize="50" VerticalContentAlignment="Center" IsVisible="True" HeightRequest = "50" WidthRequest="300"
+                                    BackgroundColor="White" Opacity="0" TextColor="Black" FontFamily="Quicksand-Regular#Quicksand"
+                                    FontAttributes="Bold" x:Name="OK" Text=""
+                                    BorderColor="White" CornerRadius="60"
+                                   
+                                    Clicked="OK_Clicked"
+                                    />
+
+        </Grid>
+    </pages:PopupPage.Content>
+</pages:PopupPage>-->
