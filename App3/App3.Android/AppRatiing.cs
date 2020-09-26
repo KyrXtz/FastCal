@@ -35,7 +35,7 @@ namespace App3.Droid
             catch (PackageManager.NameNotFoundException ex)
             {
                 // this won't happen. But catching just in case the user has downloaded the app without having Google Play installed.
-
+		//TEST UPDATE
                 Console.WriteLine(ex.Message);
             }
             catch (ActivityNotFoundException)
